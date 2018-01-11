@@ -15,7 +15,7 @@
 
 static CGFloat  progressLineWidth = 10;  // 外圆进度的线宽
 
-
+IB_DESIGNABLE
 @interface SWRoundView ()
 
 @property (nonatomic,assign)CGFloat startAngle;  // 开始的弧度
@@ -43,7 +43,11 @@ static CGFloat  progressLineWidth = 10;  // 外圆进度的线宽
 
 @implementation SWRoundView
 
-
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    
+    
+}
 
 
 
@@ -180,7 +184,6 @@ static CGFloat  progressLineWidth = 10;  // 外圆进度的线宽
 - (void)setPercent:(CGFloat)percent
 {
     
-    
     if (percent > 1) {
         percent = 1;
     }else if (percent < 0){
@@ -196,26 +199,10 @@ static CGFloat  progressLineWidth = 10;  // 外圆进度的线宽
 - (void)shapeChange
 {
     
-    _progressLayer.strokeEnd = 0 ;
+//    _progressLayer.strokeEnd = 0 ;
     [UIView animateWithDuration:0.8 animations:^{
         _progressLayer.strokeEnd = _percent;
     }];
-    return;
-    
-    // 复原
-    [CATransaction begin];
-    [CATransaction setDisableActions:NO];
-    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-    [CATransaction setAnimationDuration:0];
-    _progressLayer.strokeEnd = 0 ;
-    [CATransaction commit];
-    
-    [CATransaction begin];
-    [CATransaction setDisableActions:NO];
-    [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
-    [CATransaction setAnimationDuration:0.8f];
-    _progressLayer.strokeEnd = _percent;;
-    [CATransaction commit];
     
 }
 

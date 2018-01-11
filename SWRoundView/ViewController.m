@@ -11,7 +11,8 @@
 
 @interface ViewController ()
 
-@property (nonatomic,strong) SWRoundView * view1;
+@property (nonatomic,strong)  SWRoundView * view1;
+@property (nonatomic,strong)IBOutlet  SWRoundView * view2;
 
 @end
 
@@ -20,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    SWRoundView * view1 = [[SWRoundView alloc]initWithFrame:(CGRectMake(20, 50, 335, 335  ))];
+    SWRoundView * view1 = [[SWRoundView alloc]initWithFrame:(CGRectMake(20, 50, 250, 250  ))];
     _view1 = view1;
     view1.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:view1];
@@ -32,6 +33,7 @@
     
     
     _view1.percent = arc4random()%100/100.0;
+    _view2.percent = arc4random()%100/100.0;
     
 }
 

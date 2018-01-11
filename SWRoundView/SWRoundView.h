@@ -11,6 +11,6 @@
 @interface SWRoundView : UIView
 
 
-@property (nonatomic,assign) IBInspectable CGFloat percent;
+@property (nonatomic,assign) CGFloat percent;
 
 @end
