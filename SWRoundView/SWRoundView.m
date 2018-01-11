@@ -62,7 +62,7 @@ IB_DESIGNABLE
     _centerY = _centerX  ; // 控制圆盘的Y轴坐标
     
     
-    _progressRadius = self.bounds.size.width*0.5-20;
+    _progressRadius = self.bounds.size.width*0.5-progressLineWidth*0.5;
     //底部的
     [self drawBaseProgressLayer];
     [self.layer addSublayer:_baseLayer];
